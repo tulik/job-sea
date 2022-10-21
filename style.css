@@ -1,0 +1,685 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* BASIC */
+
+html {
+    background-color: #1e2834;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 40px 8px 10px 8px;
+    color: #cccccc;
+}
+
+h4 {
+    text-transform: uppercase;
+    display: inline-block;
+    color: #e68004;
+
+}
+
+.lang {
+    color: #0d0d0d;
+    font-size: 17px;
+}
+
+.njs {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 30px 0px 0px 450px;
+    color: white;
+
+
+}
+
+.sulink {
+    color: #81b75f;
+    margin-left: 5px;
+    webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.sulink:hover {
+    color: #406b25;
+}
+
+.hp {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 60px 30px 60px 30px;
+    padding: 30px 10px 30px 10px;
+    color: #0d0d0d;
+    /*��� ��� ���� �����*/
+    webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.hp:hover {
+    color: #ade7a4;
+}
+
+.hpwrapper:focus {
+    color: #ade7a4;
+
+}
+
+
+/* STRUCTURE */
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+}
+
+.formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+
+.hpContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px; /*������� �� ���� ���� */
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    height: 250px;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.hpwrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+
+}
+
+/* flex homepage */
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+
+}
+
+.flex-child:first-child {
+    margin-right: 20px;
+}
+
+
+h2.active {
+    color: #0d0d0d;
+    border-bottom: 2px solid #5fbae9;
+}
+
+
+/* FORM TYPOGRAPHY*/
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: forestgreen;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+    background-color: darkgreen;
+}
+
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active, .hovhp:active, .sulink:active {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.hp:active {
+
+    color: green;
+}
+
+
+/*Gray box*/
+
+
+input[type=text], input[type=password], input[type=email], input[type=number], textarea {
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, textarea:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #5fbae9;
+}
+
+input[type=text]:placeholder {
+    color: #cccccc;
+}
+
+
+/* ANIMATIONS */
+
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+    -webkit-animation: fadeIn ease-in 1;
+    -moz-animation: fadeIn ease-in 1;
+    animation: fadeIn ease-in 1;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.fadeIn.first {
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+    -webkit-animation-delay: 0.6s;
+    -moz-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+    -webkit-animation-delay: 0.8s;
+    -moz-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: #56baed;
+    content: "";
+    transition: width 0.2s;
+}
+
+.underlineHover:hover {
+    color: #0d0d0d;
+}
+
+.underlineHover:hover:after {
+    width: 100%;
+}
+
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+}
+
+#icon {
+    width: 60%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.jobInfo {
+    display: flex;
+    border: #0d0d0d;
+    border-style: solid;
+    justify-content: center;
+    width: 600px;
+    height: 150px;
+    text-align: center;
+    margin-right: 300px;
+    margin-left: 300px;
+    background-color: #fff;
+}
+
+.providerInfo {
+    display: flex;
+    border: #0d0d0d;
+    border-style: solid;
+    justify-content: center;
+    width: 600px;
+    height: 150px;
+    margin-right: 300px;
+    margin-left: 300px;
+    background-color: #fff;
+}
+
+#apply:hover {
+    color: #81b75f;
+}
+
+
+#edit:hover {
+    color: #81b75f;
+}
+
+
+.jobInfo {
+    display: flex;
+    border: #0d0d0d;
+    border-style: solid;
+    justify-content: center;
+    width: 600px;
+    height: 150px;
+    text-align: center;
+    margin-right: 300px;
+    margin-left: 300px;
+    background-color: #fff;
+}
+
+
+.jod {
+    width: 100%;
+    min-height: 50%;
+}
+
+.jol {
+    width: 100%;
+    min-height: 65%;
+}
+
+
+#apply:hover {
+    color: #81b75f;
+}
+
+
+#edit:hover {
+    color: #81b75f;
+}
+
+/*------------------------------------*/
+/*------------------------------------*/
+
+#logOut {
+    float: right;
+    margin-top: 0px;
+}
+
+table {
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    margin: 40px 8px 10px 8px;
+    color: #cccccc;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: 3px solid #1e2834;
+
+}
+
+tr td {
+    background-color: #f2f2f2;
+    color: #1e2834;
+}
+
+tr td:hover {
+    background-color: #cbc8c8;
+}
+
+#frH, #srH, #thrH {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* #frH:hover , #srH:hover , #thrH :hover */
+
+
+/* Style the submit button */
+form.example button {
+    width: 39px;
+    height: 39px;
+    padding: 10px;
+    background: #309021;
+    color: white;
+    font-size: 17px;
+    border: 0.1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+form.example button:hover {
+    background: #26711a;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#UDStat {
+    float: center;
+}
+
+#UDStat:hover {
+    background-color: #f2f2f2;
+}
+
+#tdEdit:hover {
+    background-color: #f2f2f2;
+}
+
+
+/* select option */
+
+select {
+    /* styling */
+    background-color: white;
+    border: thin solid #5fbae9;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.4em 3.5em 0.4em 1em;
+    /* reset */
+
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+}
+
+select:focus {
+    background-image: linear-gradient(45deg, green 50%, transparent 50%), linear-gradient(135deg, transparent 50%, green 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+    border-color: green;
+    outline: 0;
+}
+
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    color: #95a5a6;
+    font-family: "Helvetica", arial, sans-serif;
+    border: 1px solid #ecf0f1;
+    background: #ecf0f1;
+    padding: 5px;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+input[type="date"], focus {
+    color: #95a5a6;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+.buttonS {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #309021;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+}
+
+
+.buttonS:hover {
+    background-color: #1aa705;
+}
+
+.buttonS:active {
+    background-color: #309021;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+
+
+.buttonSD {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #e24620;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+}
+
+
+.buttonSD:hover {
+    background-color: #f81515
+}
+
+.buttonSD:active {
+    background-color: #e24620;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+}
+
+.JoD {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+
+
+}
+
+.black {
+    color: #1e2834;
+}
+
+a {
+    color: #c05f2b;
+}
+
+a:hover {
+    color: #9c4d23;
+}
+
+td, a, button {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.marg {
+    margin-left: 84px;
+}
+
+.offerbuttons {
+
+    margin-left: 30px;
+
+}
