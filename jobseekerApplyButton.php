@@ -32,5 +32,3 @@ $result1 = mysqli_query($connection, $qurey1);
 
 
 header("Location:JobSeekerHomePage.php");
-
-?>

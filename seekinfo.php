@@ -1,23 +1,17 @@
 <?php
-
 session_start();
 
 # security
-
 if (!isset($_SESSION['id'])) {
     header("Location: index.php");
 }
-
 
 if ($_SESSION['role'] == 'jobseeker') {
     header("Location: JobSeekerHomePage.php");
 } else if ($_SESSION['role'] != 'jobprovider')
     header("Location: index.php");
-
-
 ?>
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
@@ -27,12 +21,11 @@ if ($_SESSION['role'] == 'jobseeker') {
     <script src="java.js" defer></script>
 </head>
 <body>
-<div class=" fadeInDown " class="logo">
+<div class=" fadeInDown logo">
     <img class="logo" src="images/logo.PNG" alt="logo">
 </div>
 
 <h2 style="color:aliceblue; " class="fadeIn first marg">Seeker Information : </h2>
-
 
 <div class="Info">
 

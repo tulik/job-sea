@@ -1,13 +1,9 @@
 <?php
-
 include_once 'connection.php';
 
 function signIn($connection, $role)
 {
-
-
     if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-
 
         if (isset($_POST['fn']) && isset($_POST['ln']) && isset($_POST['passsu']) && isset($_POST['em'])
             && isset($_POST['age']) && isset($_POST['phone']) && isset($_POST['qual'])
@@ -15,7 +11,6 @@ function signIn($connection, $role)
 
             $email = mysqli_real_escape_string($connection, $_POST['em']);
             $select = mysqli_query($connection, "SELECT * FROM jobseeker WHERE email_address = '$email'");
-
 
             #already signed?
 
@@ -25,7 +20,6 @@ function signIn($connection, $role)
                 // email does not exist
 
                 //initialization
-
                 $firstname = mysqli_real_escape_string($connection, $_POST['fn']);
                 $lastname = mysqli_real_escape_string($connection, $_POST['ln']);
                 $password = mysqli_real_escape_string($connection, $_POST['passsu']);
@@ -53,11 +47,11 @@ function signIn($connection, $role)
                     if (isset($_POST['ar']))
                         $lang .= mysqli_real_escape_string($connection, $_POST['ar']) . " ";
                     if (isset($_POST['ch']))
-                        $lang .= $ch = mysqli_real_escape_string($connection, $_POST['ch']) . " ";
+                        $lang .= mysqli_real_escape_string($connection, $_POST['ch']) . " ";
 
                 } else
-                    return "check at least 1 language!";
 
+                    return "check at least 1 language!";
 
                 while (1) {
 
@@ -68,16 +62,13 @@ function signIn($connection, $role)
                     $res = mysqli_query($connection, $q);
                     $rowCount = mysqli_num_rows($res);
 
-
                     // not found in the db = unique, so insert id into db and break loop
                     if ($rowCount < 1) {
 
                         #hash password
                         $ph = password_hash($password, PASSWORD_DEFAULT);
 
-
                         #save to DB
-
                         $sql = "INSERT INTO `jobseeker` (`id`, `first_name`, `last_name`, `age`, `qualifications`, `work_experience`,
                         `languages`, `phone_number`, `email_address`, `password`)
                         VALUES($id,'$firstname', '$lastname' ,'$age','$qual','$allwork','$lang','$phone', '$email', '$ph');";
@@ -85,50 +76,35 @@ function signIn($connection, $role)
                         $result = mysqli_query($connection, $sql) or die(mysqli_error($connection));
 
 
-                        if ($result) {
-                            $query = "SELECT * FROM `jobseeker` WHERE email_address ='$email'";
-                            $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
-                            $rows = mysqli_num_rows($result);
+                        $query = "SELECT * FROM `jobseeker` WHERE email_address ='$email'";
+                        $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+                        $rows = mysqli_num_rows($result);
 
-                            if ($rows == 1) {
-                                $row = mysqli_fetch_assoc($result);
-                                $id = $row['id'];
-                                $_SESSION['id'] = $id;
-                                $_SESSION['role'] = $role;
-                                header("Location: JobSeekerHomePage.php");
-                            }
-
+                        if ($rows == 1) {
+                            $row = mysqli_fetch_assoc($result);
+                            $id = $row['id'];
+                            $_SESSION['id'] = $id;
+                            $_SESSION['role'] = $role;
+                            header("Location: JobSeekerHomePage.php");
                         }
 
                         break;
                     } //id unique
-
-
                 }//end while
-
             }// if email not signed in
-
-
         }//elements set?
         else {
             return 'missing fields!';
         }
-
     }//post??
-
 } // end function
-
 
 function login($connection, $role)
 {
-
-
     if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-
 
         if (isset($_POST['submit']) || $_POST['loginprov'] == 'LogIn') {
             if ((isset($_POST['em']) && isset($_POST['ps'])) || (isset($_POST['username']) && isset($_POST['password']))) {
-
 
                 if ($role == 'jobseeker') {
                     $email = $_POST['em'];
@@ -142,16 +118,12 @@ function login($connection, $role)
 
                 }
 
-
                 $ph = password_hash($password, PASSWORD_DEFAULT);
-
 
                 $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
                 $rows = mysqli_num_rows($result);
 
-
                 if ($rows == 1) {
-
 
                     $row = mysqli_fetch_assoc($result);
                     if (password_verify($password, $row['password'])) {
@@ -162,7 +134,6 @@ function login($connection, $role)
 
                         echo $_SESSION['id'];
                         echo $_SESSION['role'];
-
 
                         if ($role == 'jobseeker')
                             header("Location: JobSeekerHomePage.php");
@@ -178,12 +149,10 @@ function login($connection, $role)
                     }
                 } else {
 
-
                     if ($role == 'jobprovider')
                         return 'Incorrect username or password!';
                     if ($role == 'jobseeker')
                         return 'Incorrect email or password!';
-
                 }
             } else {
 
@@ -193,8 +162,5 @@ function login($connection, $role)
                     return 'username or password is missing!';
             }
         }
-
     }//isset?
-
 }//end function
-                               

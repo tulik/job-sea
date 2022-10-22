@@ -1,7 +1,6 @@
 <?php
 require 'connection.php';
 
-
 session_start();
 
 # security
@@ -10,12 +9,10 @@ if (!isset($_SESSION['id'])) {
     header("Location: index.php");
 }
 
-
 if ($_SESSION['role'] == 'jobseeker') {
     header("Location: JobSeekerHomePage.php");
 } else if ($_SESSION['role'] != 'jobprovider')
     header("Location: index.php");
-
 
 if (isset($_GET['insert'])) {
     $id = $_GET['id'];
@@ -32,15 +29,9 @@ if (isset($_GET['insert'])) {
         }
     }
 
-    $qurey2 = "UPDATE jobapplication
-SET application_status_id = '$idAPS'
-WHERE id = '$Id'";
+    $qurey2 = "UPDATE jobapplication SET application_status_id = '$idAPS' WHERE id = '$Id'";
 
     $result2 = mysqli_query($connect, $qurey2);
 
     header("Refresh:0; url='JobProviderHomePage.php' ");
-
-
 }
-?>
-
