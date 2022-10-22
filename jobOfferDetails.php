@@ -31,21 +31,23 @@ if ($_SESSION['role'] != 'jobprovider' && $_SESSION['role'] != 'jobseeker') {
             <?php
             include_once 'connection.php';
 
-            $title = $_GET['title'];
-            $sql = "SELECT * FROM joboffer WHERE title = '$title'";
-            $result1 = mysqli_query($connection, $sql);
+$title = $_GET['title'];
+$sql = "SELECT * FROM joboffer WHERE title = '$title'";
+$result1 = mysqli_query($connection, $sql);
 
-            if (mysqli_num_rows($result1) > 0)
-                $row = mysqli_fetch_assoc($result1);
+if (mysqli_num_rows($result1) > 0) {
+    $row = mysqli_fetch_assoc($result1);
+}
 
-            $cid = $row['job_category_id'];
-            $sql2 = "SELECT * FROM jobcategory WHERE id = '$cid' ";
-            $result2 = mysqli_query($connection, $sql2);
+$cid = $row['job_category_id'];
+$sql2 = "SELECT * FROM jobcategory WHERE id = '$cid' ";
+$result2 = mysqli_query($connection, $sql2);
 
-            if (mysqli_num_rows($result2) > 0)
-                $c = mysqli_fetch_assoc($result2);
-            $category = $c['category'];
-            ?>
+if (mysqli_num_rows($result2) > 0) {
+    $c = mysqli_fetch_assoc($result2);
+}
+$category = $c['category'];
+?>
 
             <div>
                 <br/>
@@ -95,13 +97,14 @@ if ($_SESSION['role'] != 'jobprovider' && $_SESSION['role'] != 'jobseeker') {
                     </tr>
                 </table>
                 <?php
-                $pid = $row['job_provider_id'];
-                $sql3 = "SELECT * FROM jobprovider WHERE id = '$pid' ";
-                $result3 = mysqli_query($connection, $sql3);
+    $pid = $row['job_provider_id'];
+$sql3 = "SELECT * FROM jobprovider WHERE id = '$pid' ";
+$result3 = mysqli_query($connection, $sql3);
 
-                if (mysqli_num_rows($result3) > 0)
-                    $p = mysqli_fetch_assoc($result3);
-                ?>
+if (mysqli_num_rows($result3) > 0) {
+    $p = mysqli_fetch_assoc($result3);
+}
+?>
 
                 <br/>
                 <h2 class="fadeIn third">job provider information</h2>

@@ -1,14 +1,13 @@
 <?php
+
 include_once 'connection.php';
 
 function signIn($connection, $role)
 {
     if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-
         if (isset($_POST['fn']) && isset($_POST['ln']) && isset($_POST['passsu']) && isset($_POST['em'])
             && isset($_POST['age']) && isset($_POST['phone']) && isset($_POST['qual'])
             && isset($_POST['wp']) && isset($_POST['sd']) && isset($_POST['ed'])) {
-
             $email = mysqli_real_escape_string($connection, $_POST['em']);
             $select = mysqli_query($connection, "SELECT * FROM jobseeker WHERE email_address = '$email'");
 
@@ -36,25 +35,24 @@ function signIn($connection, $role)
                 $lang = "";
 
                 if ((isset($_POST['eng'])) || (isset($_POST['ar'])) || (isset($_POST['ch']))) {
-
-
                     $eng = mysqli_real_escape_string($connection, $_POST['eng']);
                     $ar = mysqli_real_escape_string($connection, $_POST['ar']);
                     $ch = mysqli_real_escape_string($connection, $_POST['ch']);
 
-                    if (isset($_POST['eng']))
+                    if (isset($_POST['eng'])) {
                         $lang .= mysqli_real_escape_string($connection, $_POST['eng']) . " ";
-                    if (isset($_POST['ar']))
+                    }
+                    if (isset($_POST['ar'])) {
                         $lang .= mysqli_real_escape_string($connection, $_POST['ar']) . " ";
-                    if (isset($_POST['ch']))
+                    }
+                    if (isset($_POST['ch'])) {
                         $lang .= mysqli_real_escape_string($connection, $_POST['ch']) . " ";
-
-                } else
-
+                    }
+                } else {
                     return "check at least 1 language!";
+                }
 
                 while (1) {
-
                     #create id
                     $id = rand(1, 999999);// generate unique random number
 
@@ -64,7 +62,6 @@ function signIn($connection, $role)
 
                     // not found in the db = unique, so insert id into db and break loop
                     if ($rowCount < 1) {
-
                         #hash password
                         $ph = password_hash($password, PASSWORD_DEFAULT);
 
@@ -102,10 +99,8 @@ function signIn($connection, $role)
 function login($connection, $role)
 {
     if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-
         if (isset($_POST['submit']) || $_POST['loginprov'] == 'LogIn') {
             if ((isset($_POST['em']) && isset($_POST['ps'])) || (isset($_POST['username']) && isset($_POST['password']))) {
-
                 if ($role == 'jobseeker') {
                     $email = $_POST['em'];
                     $password = $_POST['ps'];
@@ -115,7 +110,6 @@ function login($connection, $role)
                     $username = $_POST['username'];
                     $password = $_POST['password'];
                     $query = "SELECT * FROM `jobprovider` WHERE username ='$username'";
-
                 }
 
                 $ph = password_hash($password, PASSWORD_DEFAULT);
@@ -124,10 +118,8 @@ function login($connection, $role)
                 $rows = mysqli_num_rows($result);
 
                 if ($rows == 1) {
-
                     $row = mysqli_fetch_assoc($result);
                     if (password_verify($password, $row['password'])) {
-
                         $id = $row['id'];
                         $_SESSION['id'] = $id;
                         $_SESSION['role'] = $role;
@@ -135,31 +127,36 @@ function login($connection, $role)
                         echo $_SESSION['id'];
                         echo $_SESSION['role'];
 
-                        if ($role == 'jobseeker')
+                        if ($role == 'jobseeker') {
                             header("Location: JobSeekerHomePage.php");
+                        }
 
-                        if ($role == 'jobprovider')
+                        if ($role == 'jobprovider') {
                             header("Location: JobProviderHomePage.php");
-
+                        }
                     } else {
-                        if ($role == 'jobprovider')
+                        if ($role == 'jobprovider') {
                             return 'Incorrect username or password!';
-                        if ($role == 'jobseeker')
+                        }
+                        if ($role == 'jobseeker') {
                             return 'Incorrect email or password!';
+                        }
                     }
                 } else {
-
-                    if ($role == 'jobprovider')
+                    if ($role == 'jobprovider') {
                         return 'Incorrect username or password!';
-                    if ($role == 'jobseeker')
+                    }
+                    if ($role == 'jobseeker') {
                         return 'Incorrect email or password!';
+                    }
                 }
             } else {
-
-                if ($role == 'jobseeker')
+                if ($role == 'jobseeker') {
                     return 'email or password is missing!';
-                if ($role == 'jobprovider')
+                }
+                if ($role == 'jobprovider') {
                     return 'username or password is missing!';
+                }
             }
         }
     }//isset?

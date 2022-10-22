@@ -11,8 +11,9 @@ if (!isset($_SESSION['id'])) {
 
 if ($_SESSION['role'] == 'jobseeker') {
     header("Location: JobSeekerHomePage.php");
-} else if ($_SESSION['role'] != 'jobprovider')
+} elseif ($_SESSION['role'] != 'jobprovider') {
     header("Location: index.php");
+}
 
 
 ?>
@@ -29,28 +30,26 @@ if ($_SESSION['role'] == 'jobseeker') {
     <?php
 
     require 'connection.php';
-    if ($_SERVER['REQUEST_METHOD'] == "GET" and isset($_GET["id"])) {
+if ($_SERVER['REQUEST_METHOD'] == "GET" and isset($_GET["id"])) {
+    $toEdit = $_GET['EditButton'];
+    $qurey = "SELECT * FROM joboffer WHERE id = '$toEdit' ";
+    $result = mysqli_query($connect, $qurey);
 
-        $toEdit = $_GET['EditButton'];
-        $qurey = "SELECT * FROM joboffer WHERE id = '$toEdit' ";
-        $result = mysqli_query($connect, $qurey);
-
-        while ($row = mysqli_fetch_assoc($result)) {
-            $category_id = $row['job_category_id'];
-        }
-
-        $qurey1 = "SELECT * FROM jobcategory WHERE id = '$category_id' ";
-        $result1 = mysqli_query($connect, $qurey1);
-        if (mysqli_num_rows($result1) > 0) {
-            while ($row = mysqli_fetch_assoc($result1)) {
-                $category = $row['category'];
-            }
-        } else {
-            echo '<script> alert("no record found"); </script>';
-
-        }
+    while ($row = mysqli_fetch_assoc($result)) {
+        $category_id = $row['job_category_id'];
     }
-    ?>
+
+    $qurey1 = "SELECT * FROM jobcategory WHERE id = '$category_id' ";
+    $result1 = mysqli_query($connect, $qurey1);
+    if (mysqli_num_rows($result1) > 0) {
+        while ($row = mysqli_fetch_assoc($result1)) {
+            $category = $row['category'];
+        }
+    } else {
+        echo '<script> alert("no record found"); </script>';
+    }
+}
+?>
     <div class=" fadeInDown logo">
         <img class="logo" src="images/logo.PNG" alt="logo">
     </div>
@@ -63,10 +62,10 @@ if ($_SESSION['role'] == 'jobseeker') {
 
             <!-- Login Form -->
             <?php
-            $toEdit = $_GET['EditButton'];
-            $qurey = "SELECT * FROM joboffer WHERE id = '$toEdit' ";
-            $result = mysqli_query($connect, $qurey);
-            while ($row = mysqli_fetch_assoc($result)){ ?>
+        $toEdit = $_GET['EditButton'];
+$qurey = "SELECT * FROM joboffer WHERE id = '$toEdit' ";
+$result = mysqli_query($connect, $qurey);
+while ($row = mysqli_fetch_assoc($result)) { ?>
             <form action="JobProviderHomePage.php" type="GET">
                 <input type="hidden" value="<?php echo $IDOFFER; ?>">
                 <input type="text" id="title" class="fadeIn third" name="title" placeholder="Title"

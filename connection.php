@@ -1,7 +1,12 @@
 <?php
 
 $connection = mysqli_connect(
-    "localhost", "root", "root", "jobseadb", "8889");
+    "localhost",
+    "root",
+    "root",
+    "jobseadb",
+    "8889"
+);
 
 $error = mysqli_connect_error();
 

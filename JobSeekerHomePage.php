@@ -7,8 +7,9 @@ if (!isset($_SESSION['id'])) {
 }
 if ($_SESSION['role'] == 'jobprovider') {
     header("Location: JobProviderHomePage.php");
-} else if ($_SESSION['role'] != 'jobseeker')
+} elseif ($_SESSION['role'] != 'jobseeker') {
     header("Location: index.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -39,7 +40,6 @@ $connection = mysqli_connect($host, $user, $pass, $database);
 $error = mysqli_connect_error();
 
 if ($error != null) {
-
     $output = "<p>Unable to connect </p>" . $error;
 
     exit($output);
@@ -48,10 +48,8 @@ if ($error != null) {
 //a
 
 if (!isset($_SESSION["id"])) {
-
     $id = 1111;
 } else {
-
     $id = $_SESSION["id"];
 }
 
@@ -84,10 +82,8 @@ $n = mysqli_fetch_assoc($result1);
             <tr id="infofrH">
                 <?php
 
-                while ($row = mysqli_fetch_assoc($result))
-                {
-
-                ?>
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
                 <td><?php echo $row['first_name']; ?></td>
                 <td><?php echo $row['last_name']; ?></td>
                 <td><?php echo $row['age']; ?></td>
@@ -97,9 +93,9 @@ $n = mysqli_fetch_assoc($result1);
             </tr>
 
             <?php
-            }
+                }
 
-            ?>
+?>
 
 
             <tr id="srH">
@@ -110,20 +106,18 @@ $n = mysqli_fetch_assoc($result1);
             <tr id="infosrH">
                 <?php
 
-                $result3 = mysqli_query($connection, $sql);
+    $result3 = mysqli_query($connection, $sql);
 
-                while ($row = mysqli_fetch_assoc($result3))
-                {
-
-                ?>
+while ($row = mysqli_fetch_assoc($result3)) {
+    ?>
                 <td colspan="3"><?php echo $row['qualifications']; ?></td>
                 <td colspan="2"><?php echo $row['languages']; ?></td>
             </tr>
 
         <?php
-        }
+}
 
-        ?>
+?>
             <tr id="thrH">
                 <th colspan="2">Email Address</th>
                 <th colspan="3">Work Experience</th>
@@ -132,21 +126,19 @@ $n = mysqli_fetch_assoc($result1);
             <tr id="infothrH">
                 <?php
 
-                $result2 = mysqli_query($connection, $sql);
+        $result2 = mysqli_query($connection, $sql);
 
-                while ($row = mysqli_fetch_assoc($result2))
-                {
-
-                ?>
+while ($row = mysqli_fetch_assoc($result2)) {
+    ?>
                 <td colspan="2"><?php echo $row['email_address']; ?></td>
                 <td colspan="3"><?php echo $row['work_experience']; ?></td>
 
             </tr>
 
         <?php
-        }
+}
 
-        ?>
+?>
 
         </table>
     </div>
@@ -174,10 +166,8 @@ $result4 = mysqli_query($connection, $sql2);
             <tr id="infothrH">
                 <?php
 
-                while ($row = mysqli_fetch_assoc($result4))
-                {
-
-                ?>
+                while ($row = mysqli_fetch_assoc($result4)) {
+                    ?>
                 <td colspan="2"><a href="jobOfferDetails.php"><?php echo $row['title']; ?> </a></td>
                 <td colspan="2"><?php echo $row['name']; ?></td>
                 <td colspan="2"><?php echo $row['status']; ?></td>
@@ -185,9 +175,9 @@ $result4 = mysqli_query($connection, $sql2);
             </tr>
 
             <?php
-            }
+                }
 
-            ?>
+?>
 
         </table>
     </div>
@@ -217,7 +207,7 @@ $resultD = mysqli_query($connection, $sqlD);
 
                     <?php
                 }
-                ?>
+?>
             </select>
 
         </form>
@@ -233,19 +223,17 @@ $resultD = mysqli_query($connection, $sqlD);
             <tr>
                 <?php
 
-                $sql3 = "SELECT * FROM joboffer INNER JOIN jobcategory ON joboffer.job_category_id = jobcategory.id INNER JOIN jobprovider ON joboffer.job_provider_id = jobprovider.id INNER JOIN jobapplication ON jobapplication.job_seeker_id='$id' WHERE joboffer.id NOT IN (SELECT job_offer_id FROM jobapplication)  ";
+$sql3 = "SELECT * FROM joboffer INNER JOIN jobcategory ON joboffer.job_category_id = jobcategory.id INNER JOIN jobprovider ON joboffer.job_provider_id = jobprovider.id INNER JOIN jobapplication ON jobapplication.job_seeker_id='$id' WHERE joboffer.id NOT IN (SELECT job_offer_id FROM jobapplication)  ";
 
 
-                if (isset($_GET['JobsCategory']) && $_GET['JobsCategory'] != "-1") {
-                    $cat = $_GET['JobsCategory'];
-
-                }
-                $result6 = mysqli_query($connection, $sql3);
-                while ($row = mysqli_fetch_assoc($result6))
-                {
-                //  $title = $row['title'];
-                print_r($row);
-                ?>
+if (isset($_GET['JobsCategory']) && $_GET['JobsCategory'] != "-1") {
+    $cat = $_GET['JobsCategory'];
+}
+$result6 = mysqli_query($connection, $sql3);
+while ($row = mysqli_fetch_assoc($result6)) {
+    //  $title = $row['title'];
+    print_r($row);
+    ?>
                 <td><?php echo $row['category']; ?></td>
                 <td><?php echo $row['title']; ?></td>
                 <td><?php echo $row['name']; ?></td>
@@ -258,30 +246,30 @@ $resultD = mysqli_query($connection, $sqlD);
             </tr>
 
             <?php
-            }
+}
 
-            ?>
+?>
 
             <?php
-            //c
-            /*
-            if(isset($GET["apply"]))
-            {
+//c
+/*
+if(isset($GET["apply"]))
+{
 
-                $sqlIns = "INSERT INTO jobapplication(job_offer_id , job_seeker_id , application_status_id)VALUES( ,$id ,'under condideration')";
-                if(mysqli_query($connection, $sqlIns))
-                {
-                    //new record created successfully
-                }
-                else{
+    $sqlIns = "INSERT INTO jobapplication(job_offer_id , job_seeker_id , application_status_id)VALUES( ,$id ,'under condideration')";
+    if(mysqli_query($connection, $sqlIns))
+    {
+        //new record created successfully
+    }
+    else{
 
-                    echo "Error: " . $sqlIns . "<br>" . mysqli_error($connection);
+        echo "Error: " . $sqlIns . "<br>" . mysqli_error($connection);
 
-                }
-            }
-            */
-            mysqli_close($connection);
-            ?>
+    }
+}
+*/
+mysqli_close($connection);
+?>
 
         </table>
     </div>

@@ -13,8 +13,6 @@
       <change beforePath="$PROJECT_DIR$/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/delete.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java1.js" beforeDir="false" afterPath="$PROJECT_DIR$/java.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobOfferDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/jobOfferDetails.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobedit.php" beforeDir="false" afterPath="$PROJECT_DIR$/jobedit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobedite.php" beforeDir="false" afterPath="$PROJECT_DIR$/jobedite.php" afterDir="false" />
@@ -23,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/jseeklogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/jseeklogin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jseeksignup.php" beforeDir="false" afterPath="$PROJECT_DIR$/jseeksignup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seekinfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/seekinfo.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,20 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/tulik/Websites/Dana",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tulik/Websites/Dana&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,7 +67,14 @@
       <option name="presentableId" value="Default" />
       <updated>1666376773603</updated>
       <workItem from="1666376774730" duration="11000" />
-      <workItem from="1666377045605" duration="7805000" />
+      <workItem from="1666377045605" duration="8142000" />
+      <workItem from="1666436303946" duration="146000" />
+      <workItem from="1666436458937" duration="34000" />
+      <workItem from="1666437421621" duration="15000" />
+      <workItem from="1666437448471" duration="18000" />
+      <workItem from="1666437471116" duration="28000" />
+      <workItem from="1666437505931" duration="61000" />
+      <workItem from="1666437583833" duration="713000" />
     </task>
     <servers />
   </component>
@@ -86,5 +91,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

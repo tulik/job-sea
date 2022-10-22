@@ -8,8 +8,9 @@ if (!isset($_SESSION['id'])) {
 
 if ($_SESSION['role'] == 'jobseeker') {
     header("Location: JobSeekerHomePage.php");
-} else if ($_SESSION['role'] != 'jobprovider')
+} elseif ($_SESSION['role'] != 'jobprovider') {
     header("Location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">

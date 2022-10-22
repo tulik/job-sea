@@ -1,4 +1,5 @@
 <?php
+
 require 'connection.php';
 
 session_start();
@@ -11,8 +12,9 @@ if (!isset($_SESSION['id'])) {
 
 if ($_SESSION['role'] == 'jobseeker') {
     header("Location: JobSeekerHomePage.php");
-} else if ($_SESSION['role'] != 'jobprovider')
+} elseif ($_SESSION['role'] != 'jobprovider') {
     header("Location: index.php");
+}
 
 if (isset($_GET['insert'])) {
     $id = $_GET['id'];

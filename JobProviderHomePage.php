@@ -10,8 +10,9 @@ if (!isset($_SESSION['id'])) {
 
 if ($_SESSION['role'] == 'jobseeker') {
     header("Location: JobSeekerHomePage.php");
-} else if ($_SESSION['role'] != 'jobprovider')
+} elseif ($_SESSION['role'] != 'jobprovider') {
     header("Location: index.php");
+}
 
 
 ?>
@@ -124,14 +125,14 @@ $result2 = mysqli_query($connect, $sql2);
                     <?php
                     //$result3 ="SELECT * FROM applicationstatus WHERE id=$id";
                     //while($row3= mysqli_fetch_array($result3)){
-                    ?>
+?>
                     <?php
 
                     //if(($row2=mysqli_fetch_assoc($result2) >0){
                     //while($row2=mysqli_fetch_assoc($result2)){
-                    ?>
+?>
 
-                    <?php //}  ?>
+                    <?php //}?>
                 </div>
             </td>
         </tr>
@@ -156,10 +157,10 @@ $result2 = mysqli_query($connect, $sql2);
             //  $row['title']=$_POST['title'];
             //}
             $sql5 = "SELECT id,title FROM joboffer WHERE job_provider_id='$id' ";
-            $result5 = mysqli_query($connect, $sql5);
+$result5 = mysqli_query($connect, $sql5);
 
-            while ($row5 = mysqli_fetch_assoc($result5)) {
-                ?>
+while ($row5 = mysqli_fetch_assoc($result5)) {
+    ?>
 
                 <td><a href="jobOfferDetails.php"><?php echo $row5['title']; ?></a></td>
 
@@ -191,7 +192,7 @@ $result2 = mysqli_query($connect, $sql2);
             $qurey = "DELETE FROM joboffer WHERE id =$toDelet" ;
             $result = mysqli_query($connect, $qurey) ;
         }*/
-                ?>
+    ?>
 
             <?php } ?>
         </tr>

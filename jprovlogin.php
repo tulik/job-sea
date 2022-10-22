@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 #task 5
 session_start();
 
@@ -10,19 +10,21 @@ $role = "jobprovider";
 
 #security
 if (isset($_SESSION['id'])) {
-    if ($_SESSION['role'] == 'jobseeker')
+    if ($_SESSION['role'] == 'jobseeker') {
         header('Location:JobSeekerHomePage.php');
-    else if ($_SESSION['role'] == 'jobprovider')
+    } elseif ($_SESSION['role'] == 'jobprovider') {
         header('Location:JobProviderHomePage.php');
-    else
+    } else {
         header('Location:index.php');
+    }
 }
 
 #log in
 $msg = "";
 if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-    if (isset($_POST['loginprov']) && $_POST['loginprov'] == 'LogIn')
+    if (isset($_POST['loginprov']) && $_POST['loginprov'] == 'LogIn') {
         $msg = login($connection, $role);
+    }
 }
 ?>
 

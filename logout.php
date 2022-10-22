@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 // Destroying All Sessions

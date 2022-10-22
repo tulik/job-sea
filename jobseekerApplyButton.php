@@ -17,7 +17,6 @@ if (isset($_GET['title'])) {
 $sqlT = "SELECT * FROM joboffer WHERE title = '$job_title'";
 $job_offer = mysqli_query($connection, $sqlT);
 while ($row = mysqli_fetch_assoc($job_offer)) {
-
     $jobid = $row['id'];
 }
 

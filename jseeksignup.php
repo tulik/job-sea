@@ -9,20 +9,22 @@ $role = "jobseeker";
 
 #security
 if (isset($_SESSION['id'])) {
-    if ($_SESSION['role'] == 'jobseeker')
+    if ($_SESSION['role'] == 'jobseeker') {
         header('Location:JobSeekerHomePage.php');
-    else if ($_SESSION['role'] == 'jobprovider')
+    } elseif ($_SESSION['role'] == 'jobprovider') {
         header('Location:JobProviderHomePage.php');
-    else
+    } else {
         header('Location:index.php');
+    }
 }
 
 $sign_error_msg = "";
 
 #sign in process
 if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
-    if (isset($_POST['submit']))
+    if (isset($_POST['submit'])) {
         $sign_error_msg = signIn($connection, $role);
+    }
 }
 ?>
 
